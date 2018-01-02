@@ -1,0 +1,7 @@
+<ul class="header clearfix">
+    <li class="header-logo pull_left">Forwhat</li>
+    <li class="header-item" :class="{'active':menu.active}"
+        v-for="menu in menuList"
+        @click="onActive(menu,menuList)">{{menu.name}}
+    </li>
+</ul>

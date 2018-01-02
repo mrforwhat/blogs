@@ -1,0 +1,116 @@
+.intro {
+  background-image: url(/static/img/main/intro.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 720px;
+  text-align: center;
+  color: #fff;
+  &-back {
+    height: 720px;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 50px;
+    &-top {
+      height: 180px;
+    }
+  }
+  &-avatar {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-image: url(/static/img/main/avatar.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+  }
+  &-content {
+    margin-top: -40px;
+  }
+  &-name {
+    font-size: 30px;
+  }
+  &-job {
+    padding: 10px 0;
+    color: #cc005f;
+  }
+  &-desc {
+    padding: 20px 0;
+  }
+}
+
+.duty {
+  background: #232323;
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+  &-title {
+    font-size: 34px;
+    &_middle {
+      font-size: 28px;
+    }
+  }
+  &-container {
+    width: 900px;
+    margin: 0 auto;
+  }
+  &-panel {
+    width: 50%;
+    padding: 15px;
+  }
+  &-list {
+    padding: 10px;
+    text-align: left;
+    &-item {
+      line-height: 1.8;
+    }
+  }
+  &-help {
+    padding: 10px;
+    &-item {
+      display: inline-block;
+      float: left;
+      margin: 0 20px;
+    }
+  }
+  &-skill {
+    padding: 10px;
+  }
+  &-name {
+    padding-left: 8px;
+  }
+  .icon-yes {
+    color: #00ffff;
+  }
+}
+
+.hexagon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  .rectangle {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    color: #cc005f;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    &.ret1 {
+      transform: rotate(120deg);
+    }
+    &.ret2 {
+      transform: rotate(240deg);
+    }
+    &.ret3 {
+      transform: rotate(0deg);
+    }
+  }
+}

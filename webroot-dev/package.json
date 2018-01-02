@@ -1,0 +1,25 @@
+{
+  "name": "webroot",
+  "version": "0.0.1",
+  "scripts": {
+    "compile": "babel static/js --out-dir static/js --presets es2015"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "blear.classes.controller": "^1.0.4",
+    "blear.classes.router": "^1.0.33",
+    "blear.core.attribute": "1.0.11",
+    "blear.core.layout": "^1.0.6",
+    "blear.core.modification": "1.0.7",
+    "blear.core.selector": "1.0.10",
+    "blear.ui.application": "^1.0.55",
+    "blear.css.function": "1.1.0",
+    "blear.css.reset": "1.0.13",
+    "blear.scss.flex": "1.0.1",
+    "blear.scss.flexible": "1.0.2",
+    "coolie.js": "2.2.2",
+    "vue": "^2.5.11",
+    "vue-router": "^3.0.1"
+  }
+}
