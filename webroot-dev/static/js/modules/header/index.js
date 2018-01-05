@@ -33,7 +33,8 @@ let defaults = {
 let Header = function (options) {
     attribute.html(headerEl, template);
     let opt = Object.assign({}, defaults, options);
-    return new Vue({
+
+    new Vue({
         el: opt.el,
         data: {
             menuList: opt.menuList

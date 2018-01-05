@@ -15,15 +15,44 @@ let defaults = {
         {
             label: 'Html5',
             value: '80',
-            color: ''
+            color: '#00bfff'
+        },
+        {
+            label: 'CSS',
+            value: '75',
+            color: '#00bfff'
+        },
+        {
+            label: 'Jquery',
+            value: '75',
+            color: '#00bfff'
+        },
+        {
+            label: 'Vue',
+            value: '60',
+            color: '#00bfff'
+        },
+        {
+            label: 'Bootstrap',
+            value: '60',
+            color: '#00bfff'
         }
     ]
 };
 let Progress = function (options) {
     let opt = Object.assign({}, defaults, options);
     let progressEl = selector.query(opt.el)[0];
+
     attribute.html(progressEl, template);
-    return new Vue({
+    this.init = function () {
+        let progressList = opt.progressList;
+        let progressEl = selector.query(opt.el)[0];
+        let progressValEl = selector.query('.progress-value', progressEl);
+        array.each(progressList, function (index, item) {
+            attribute.style(progressValEl[index], 'width', item.value + '%');
+        });
+    };
+    new Vue({
         el: opt.el,
         data: {
             progressList: opt.progressList

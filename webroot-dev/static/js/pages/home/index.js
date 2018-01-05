@@ -28,7 +28,18 @@ ctrl.install(function (view) {
             intro: data.intro
         }
     });
-    let progress = new Progress('#progress');
+    let progress = window.progress = new Progress('#progress');
+
+    window.onscroll = function () {
+        let top = document.documentElement.scrollTop || document.body.scrollTop;
+        if (top > 173) {
+            setTimeout(function () {
+                progress.init();
+                window.onscroll = null;
+            }, 1000);
+        }
+    }
+
     // progress.setValue(3);
 
 });
