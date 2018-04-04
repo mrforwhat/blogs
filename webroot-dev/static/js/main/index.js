@@ -1,31 +1,56 @@
+/**
+ * 首页
+ * @author ydr.me
+ * @created 2016-12-17 19:12
+ */
+
+
 'use strict';
-const Vue = require('vue/dist/vue');
-const Application = require('blear.ui.application');
-const Router = require('blear.classes.router');
-const router = new Router();
-const app = new Application(router, {
+
+var Application = require('blear.ui.application');
+var Router = require('blear.classes.router');
+
+
+// require('../utils/mvvm-static-methods');
+
+var appConfigs = {
     el: '#app',
-    platform: 'desktop'
-});
-const Header = require('../modules/header/index');
-// Vue.config.productionTip = false;
-new Header();
+    platform: 'mobile'
+};
 
-router.match('/', function (next) {
-     require.async('../pages/home/index', next);
-}).otherwise(function () {
-    return {};
+var router = new Router();
+var app = new Application(router, appConfigs);
+
+
+router
+    .match({
+        meta: {
+            '/': true,
+            '/invest': true,
+            '/life': true,
+            '/mine': true
+        }
+    }, function (next) {
+        next();
+    })
+    .get('/', function (next) {
+        require.async('../pages/home/index.js', next);
+    })
+    // ========================
+    // ========【 404 】========
+    // ========================
+    .get(function (next) {
+        require.async('../public-pages/error/index.js', next);
+    });
+
+router.on('beforeLoad', function () {
+    // spinner.show();
 });
 
-app.on('beforeTransition', function () {
-    console.info(1);
-});
-
-app.on('afterTransition', function () {
-    console.info(2);
+router.on('afterLoad', function () {
+    // spinner.hide();
 });
 
 router.start();
 
 
-// 现在，应用已经启动了！

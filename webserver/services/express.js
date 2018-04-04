@@ -10,7 +10,7 @@
 var express = require('express');
 var path = require('blear.node.path');
 var Template = require('blear.node.template');
-var ejs =require('ejs');
+
 var configs = require('../../configs.js');
 
 
@@ -20,7 +20,9 @@ module.exports = function (next) {
     app.set('env', configs.env);
     app.set('port', configs.port);
     app.set('views', path.join(configs.webroot, './.views/'));
-    app.engine('html',ejs.__express);
+    app.engine('html', Template.express({
+        compress: true
+    }));
     app.set('view engine', 'html');
 
     // 路由区分大小写，默认 disabled

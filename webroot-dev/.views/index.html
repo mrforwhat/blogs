@@ -6,24 +6,35 @@
  -->
 <html lang="zh-Hans">
 <head>
-    <%- include('modules/meta.html')%>
+    {{#include /modules/meta.html}}
     <title>index.html</title>
+    <script src="/node_modules/blear.core.flexible/src/index.js"></script>
+</head>
+<body ontouchstart="">
+<div id="app"></div>
+<div style="display: none">
     <!--coolie-->
     <link rel="stylesheet" href="/node_modules/blear.css.reset/src/index.css">
     <link rel="stylesheet" href="/node_modules/blear.css.function/src/index.css">
     <!--/coolie-->
-    <script src="/node_modules/vue/dist/vue.js"></script>
+
+    <!--coolie-->
+
+    <!--/coolie-->
+
     <!--iconfont-->
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_525313_javicuxna8yw4s4i.css">
-    <script src="https://at.alicdn.com/t/font_525313_javicuxna8yw4s4i.js"></script>
+    <!--<link rel="stylesheet" href="https://at.alicdn.com/t/font_609486_298i0q49dlsor.css">-->
+    <!--<script src="https://at.alicdn.com/t/font_609486_298i0q49dlsor.js"></script>-->
     <!--/iconfont-->
-</head>
-<body ontouchstart="">
-<header id="header"></header>
-<div id="app">
+
 </div>
-
-
+<!-- import Vue.js -->
+<script src="/node_modules/vue/dist/vue.min.js"></script>
+<!--<script src="//vuejs.org/js/vue.min.js"></script>-->
+<!-- import stylesheet -->
+<link rel="stylesheet" href="/node_modules/iview/dist/styles/iview.css">
+<!-- import iView -->
+<script src="/node_modules/iview/dist/iview.min.js"></script>
 <script coolie src="/node_modules/coolie.js/coolie.js"
         data-config="/static/js/coolie-config.js"
         data-main="index.js"></script>

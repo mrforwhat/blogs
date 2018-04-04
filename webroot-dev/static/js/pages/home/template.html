@@ -1,80 +1,135 @@
-<div id="container">
+<div id="home" class="layout">
+    <Layout>
+        <i-header>
+            <i-menu mode="horizontal" theme="dark" active-name="1">
+                <Menu-Item name="1">
+                    <Icon type="ios-paper"></Icon>
+                    内容管理
+                </Menu-Item>
+                <Menu-Item name="2">
+                    <Icon type="ios-people"></Icon>
+                    用户管理
+                </Menu-Item>
+                <Submenu name="3">
+                    <template slot="title">
+                        <Icon type="stats-bars"></Icon>
+                        统计分析
+                    </template>
+                    <i-menu-group title="使用">
+                        <Menu-Item name="3-1">新增和启动</Menu-Item>
+                        <Menu-Item name="3-2">活跃分析</Menu-Item>
+                        <Menu-Item name="3-3">时段分析</Menu-Item>
+                    </i-menu-group>
+                    <i-menu-group title="留存">
+                        <Menu-Item name="3-4">用户留存</Menu-Item>
+                        <Menu-Item name="3-5">流失用户</Menu-Item>
+                    </i-menu-group>
+                </Submenu>
+                <Menu-Item name="4">
+                    <Icon type="settings"></Icon>
+                    综合设置
+                </Menu-Item>
+            </i-menu>
+        </i-header>
+        <i-content>
+            <Card>
+                <p slot="title">步骤条</p>
+                <Steps current="0">
+                    <Step title="已完成" content="注册"></Step>
+                    <Step title="进行中" content="登录"></Step>
+                    <Step title="待进行" content="实名认证"></Step>
+                    <Step title="待进行" content="购买理财产品"></Step>
+                </Steps>
+            </Card>
+            <Card>
+                <p slot="title">时间轴</p>
+                <Timeline>
+                    <Timeline-item color="red">
+                        <p class="time">1976年</p>
+                        <p class="content">Apple I 问世</p>
+                    </Timeline-item>
+                    <Timeline-item color="red">
+                        <p class="time">1984年</p>
+                        <p class="content">发布Macitonsh</p>
+                    </Timeline-item>
 
-    <section class="intro">
-        <div class="intro-back">
-            <div class="intro-back-top"></div>
-            <div class="intro-avatar"></div>
-            <div class="intro-content">
-                <p class="intro-name">Forwhat</p>
-                <p class="intro-job">{{intro.job}}</p>
-                <div class="intro-desc">
-                    <p>行走于代码之间，还原视觉设计</p>
-                    <p>专注于标准，重视交互</p>
-                    <p>热爱生活，崇尚创新，追求极致的用户体验</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="duty">
-        <p class="duty-title">我的日常工作</p>
-        <div class="duty-container clearfix">
-            <div class="duty-panel pull_left">
-                <p class="duty-title duty-title_middle">任务列表</p>
-                <ul class="duty-list">
-                    <li class="duty-list-item">
-                        <i class="iconfont icon-yes"></i>
-                        <span class="duty-name">配合UCD、产品经理，高度还原视觉设计稿</span>
-                    </li>
-                    <li class="duty-list-item">
-                        <i class="iconfont icon-yes"></i>
-                        <span class="duty-name">公共组件封装</span>
-                    </li>
-                    <li class="duty-list-item">
-                        <i class="iconfont icon-yes"></i>
-                        <span class="duty-name">前后端数据交互</span>
-                    </li>
-                    <li class="duty-list-item">
-                        <i class="iconfont icon-yes"></i>
-                        <span class="duty-name">页面重构</span>
-                    </li>
-                    <li class="duty-list-item">
-                        <i class="iconfont icon-yes"></i>
-                        <span class="duty-name">性能优化</span>
-                    </li>
-                </ul>
-                <p class="duty-title duty-title_middle">辅助技能</p>
-                <ul class="duty-help clearfix">
-                    <li class="duty-help-item hexagon">
-                        <div class="rectangle ret1"></div>
-                        <div class="rectangle ret2"></div>
-                        <div class="rectangle ret3">Ps</div>
-                    </li>
-                    <li class="duty-help-item hexagon">
-                        <div class="rectangle ret1"></div>
-                        <div class="rectangle ret2"></div>
-                        <div class="rectangle ret3">Java</div>
-                    </li>
-                    <li class="duty-help-item hexagon">
-                        <div class="rectangle ret1"></div>
-                        <div class="rectangle ret2"></div>
-                        <div class="rectangle ret3">Sass</div>
-                    </li>
-                    <li class="duty-help-item hexagon">
-                        <div class="rectangle ret1"></div>
-                        <div class="rectangle ret2"></div>
-                        <div class="rectangle ret3">DB</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="duty-panel pull_right">
-                <p class="duty-title duty-title_middle">技能条</p>
-                <div class="duty-skill" id="progress">
+                    <Timeline-item color="green">
+                        <p class="time">1984年</p>
+                        <p class="content">发布Macitonsh</p>
+                    </Timeline-item>
+                    <Timeline-item color="orange">
+                        <p class="time">1984年</p>
+                        <p class="content">发布Macitonsh</p>
+                    </Timeline-item>
+                    <Timeline-item color="red">
+                        <p class="time">1984年</p>
+                        <p class="content">发布Macitonsh</p>
+                    </Timeline-item>
+                </Timeline>
+            </Card>
 
-                </div>
-            </div>
-        </div>
-    </section>
+            <Card>
+                <p slot="title">进度条</p>
+                <i-progress percent="25"></i-progress>
+            </Card>
+
+            <Card>
+                <p slot="title">下拉框</p>
+                <Row>
+                    <i-col span="8">
+                        <i-select v-model="model1">
+                            <i-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+                        </i-select>
+                    </i-col>
+                    <i-col span="8">
+                        <date-picker type="date" placeholder="Select date"></date-picker>
+                    </i-col>
+                    <i-col span="8">
+                        <date-picker type="daterange"  placement="bottom-end" placeholder="Select date"></date-picker>
+                    </i-col>
+                </Row>
+            </Card>
+
+            <Card>
+                <p slot="title">modal对话框</p>
+                <i-button type="primary" @click="modal1=true">打开对话框</i-button>
+                <modal v-model="modal1" title="这是标题" @on-ok="ok" @on-cancel="cancel">
+                    <p>content of dialog</p>
+                    <p>content of dialog</p>
+                    <p>content of dialog</p>
+                </modal>
+            </Card>
+            
+            <Card>
+                <p slot="title">幻灯片</p>
+                <Carousel autoplay autoplaySpeed="3000" loop>
+                    <carousel-item>
+                        <div class="demo-Carousel">1</div>
+                    </carousel-item>
+                    <carousel-item>
+                        <div class="demo-Carousel">2</div>
+                    </carousel-item>
+                    <carousel-item>
+                        <div class="demo-Carousel">3</div>
+                    </carousel-item>
+                    <carousel-item>
+                        <div class="demo-Carousel">4</div>
+                    </carousel-item>
+                </Carousel>
+            </Card>
+            
+            <Card>
+                <p slot="title">表格</p>
+                <i-table :columns="columns1" :data="data1"></i-table>
+            </Card>
+
+            <Card>
+                <p slot="title">分页</p>
+                <Page total="100" show-sizer></Page>
+            </Card>
+        </i-content>
+        <i-footer>
+
+        </i-footer>
+    </Layout>
 </div>
-
-
-

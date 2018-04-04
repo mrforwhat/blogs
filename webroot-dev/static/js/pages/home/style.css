@@ -1,91 +1,10 @@
-.intro {
-  background-image: url(/static/img/main/intro.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100%;
-  height: 720px;
-  text-align: center;
-  color: #fff; }
-  .intro-back {
-    height: 720px;
-    background: rgba(0, 0, 0, 0.6);
-    margin-top: 50px; }
-    .intro-back-top {
-      height: 180px; }
-  .intro-avatar {
-    display: inline-block;
-    width: 120px;
-    height: 120px;
-    background-image: url(/static/img/main/avatar.jpg);
-    background-size: cover;
-    border-radius: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); }
-  .intro-content {
-    margin-top: -40px; }
-  .intro-name {
-    font-size: 30px; }
-  .intro-job {
-    padding: 10px 0;
-    color: #cc005f; }
-  .intro-desc {
-    padding: 20px 0; }
+.ivu-layout-content {
+  background: #fff;
+  padding: 20px; }
 
-.duty {
-  background: #232323;
+.demo-Carousel {
+  color: white;
+  height: 200px;
+  line-height: 200px;
   text-align: center;
-  padding: 20px 0;
-  color: #fff; }
-  .duty-title {
-    font-size: 34px; }
-    .duty-title_middle {
-      font-size: 28px; }
-  .duty-container {
-    width: 900px;
-    margin: 0 auto; }
-  .duty-panel {
-    width: 50%;
-    padding: 15px; }
-  .duty-list {
-    padding: 10px;
-    text-align: left; }
-    .duty-list-item {
-      line-height: 1.8; }
-  .duty-help {
-    padding: 10px; }
-    .duty-help-item {
-      display: inline-block;
-      float: left;
-      margin: 0 20px; }
-  .duty-skill {
-    padding: 10px; }
-  .duty-name {
-    padding-left: 8px; }
-  .duty .icon-yes {
-    color: #00ffff; }
-
-.hexagon {
-  position: relative;
-  width: 60px;
-  height: 60px; }
-  .hexagon .rectangle {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    width: 60px;
-    height: 35px;
-    line-height: 35px;
-    color: #cc005f;
-    border-left: 1px solid white;
-    border-right: 1px solid white; }
-    .hexagon .rectangle.ret1 {
-      transform: rotate(120deg); }
-    .hexagon .rectangle.ret2 {
-      transform: rotate(240deg); }
-    .hexagon .rectangle.ret3 {
-      transform: rotate(0deg); }
+  background: #506b9e; }
