@@ -13,7 +13,7 @@ var pkg = require('./package.json');
 var env = getEnv();
 var webroot = env === 'local' ? 'dev' : 'pro';
 var root = __dirname;
-var port = 10000;
+var port = 3010;
 
 module.exports = {
     port: port,

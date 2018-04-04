@@ -1,12 +1,126 @@
+@import '../../../css/varible';
+@import '../../../../node_modules/blear.scss.flex/src/index';
+@import '../../../../node_modules/blear.scss.flexible/src/index';
+
 .ivu-layout-content {
   background: #fff;
   padding: 20px;
 }
 
-.demo-Carousel {
-  color: white;
-  height: 200px;
-  line-height: 200px;
-  text-align: center;
-  background: #506b9e;
+.layout {
+  &-logo {
+    float: left;
+    color: white;
+    min-width: 100px;
+    height: 40px;
+    background: #5b6270;
+    line-height: 40px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border-radius: 5px;
+  }
+  &-nav {
+    float: right;
+  }
+  &-content {
+    background: #333;
+  }
+}
+
+.banner {
+  height: 280px;
+}
+
+.me {
+  &-desc {
+    line-height: 2;
+  }
+  &-link {
+    @include flex();
+    @include align-items(center);
+    &-item {
+      @include flex-grow(1);
+      text-align: center;
+    }
+    &-border {
+      padding: 5px;
+      width: 50px;
+      height: 50px;
+      line-height: 52px;
+      border-radius: 50%;
+      box-shadow: 0 1px 2px #333;
+    }
+  }
+  &-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.latest {
+  margin: 10px 0;
+}
+
+.dynamic {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #999;
+    right: -30px;
+    top: 0;
+  }
+}
+
+.article {
+  position: relative;
+  margin-top: 20px;
+  &-content {
+    @include flex();
+  }
+  &-pic {
+    flex: none;
+    width: 210px;
+    height: 120px;
+    padding: 10px;
+  }
+  &-desc {
+    padding: 10px;
+    @include flex-grow(1);
+  }
+  &-icon {
+    padding: 0 5px;
+  }
+  li {
+    cursor: pointer;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -15px;
+    border-left: 20px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+}
+
+.comment {
+  @include flex();
+  @include align-items(stretch);
+  padding: 5px;
+  &-avatar {
+    flex: none;
+    padding: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+  }
+  &-content {
+    @include flex-grow(1);
+    padding: 5px;
+  }
 }

@@ -2,131 +2,246 @@
     <Layout>
         <i-header>
             <i-menu mode="horizontal" theme="dark" active-name="1">
-                <Menu-Item name="1">
-                    <Icon type="ios-paper"></Icon>
-                    内容管理
-                </Menu-Item>
-                <Menu-Item name="2">
-                    <Icon type="ios-people"></Icon>
-                    用户管理
-                </Menu-Item>
-                <Submenu name="3">
-                    <template slot="title">
-                        <Icon type="stats-bars"></Icon>
-                        统计分析
-                    </template>
-                    <i-menu-group title="使用">
-                        <Menu-Item name="3-1">新增和启动</Menu-Item>
-                        <Menu-Item name="3-2">活跃分析</Menu-Item>
-                        <Menu-Item name="3-3">时段分析</Menu-Item>
-                    </i-menu-group>
-                    <i-menu-group title="留存">
-                        <Menu-Item name="3-4">用户留存</Menu-Item>
-                        <Menu-Item name="3-5">流失用户</Menu-Item>
-                    </i-menu-group>
-                </Submenu>
-                <Menu-Item name="4">
-                    <Icon type="settings"></Icon>
-                    综合设置
-                </Menu-Item>
+                <div class="layout-logo">北纬30°の伪装</div>
+                <div class="layout-nav">
+                    <Menu-Item name="1">
+                        <Icon type="ios-paper"></Icon>
+                        首页
+                    </Menu-Item>
+                    <Menu-Item name="2">
+                        <Icon type="ios-people"></Icon>
+                        笔记
+                    </Menu-Item>
+                    <Menu-Item name="2">
+                        <Icon type="ios-people"></Icon>
+                        demo
+                    </Menu-Item>
+                    <Submenu name="3">
+                        <template slot="title">
+                            <Icon type="stats-bars"></Icon>
+                            分享
+                        </template>
+                        <i-menu-group title="使用">
+                            <Menu-Item name="3-1">新增和启动</Menu-Item>
+                            <Menu-Item name="3-2">活跃分析</Menu-Item>
+                            <Menu-Item name="3-3">时段分析</Menu-Item>
+                        </i-menu-group>
+                        <i-menu-group title="留存">
+                            <Menu-Item name="3-4">用户留存</Menu-Item>
+                            <Menu-Item name="3-5">流失用户</Menu-Item>
+                        </i-menu-group>
+                    </Submenu>
+                    <Menu-Item name="4">
+                        <Icon type="settings"></Icon>
+                        我的
+                    </Menu-Item>
+                </div>
             </i-menu>
         </i-header>
-        <i-content>
-            <Card>
-                <p slot="title">步骤条</p>
-                <Steps current="0">
-                    <Step title="已完成" content="注册"></Step>
-                    <Step title="进行中" content="登录"></Step>
-                    <Step title="待进行" content="实名认证"></Step>
-                    <Step title="待进行" content="购买理财产品"></Step>
-                </Steps>
-            </Card>
-            <Card>
-                <p slot="title">时间轴</p>
-                <Timeline>
-                    <Timeline-item color="red">
-                        <p class="time">1976年</p>
-                        <p class="content">Apple I 问世</p>
-                    </Timeline-item>
-                    <Timeline-item color="red">
-                        <p class="time">1984年</p>
-                        <p class="content">发布Macitonsh</p>
-                    </Timeline-item>
+        <i-content class="layout-content">
+            <Row>
+                <i-col offset="3" span="12">
+                    <Carousel autoplay autoplaySpeed="3000" loop>
+                        <carousel-item>
+                            <div class="banner">
+                                <img src="../../static/img/home/banner-1.jpg" alt="">
+                            </div>
+                        </carousel-item>
+                        <carousel-item>
+                            <div class="banner">
+                                <img src="../../static/img/home/banner-2.jpg" alt="">
+                            </div>
+                        </carousel-item>
+                        <carousel-item>
+                            <div class="banner">
+                                <img src="../../static/img/home/banner-3.jpg" alt="">
+                            </div>
+                        </carousel-item>
+                    </Carousel>
+                </i-col>
+                <i-col offset="1" span="6">
+                    <Card class="me">
+                        <p slot="title">关于我</p>
+                        <p class="me-desc">昵称：北纬30°の伪装</p>
+                        <p class="me-desc">爱好：跑步、篮球、音乐、coding（我都不信）</p>
+                        <p class="me-desc">职业：web前端攻城狮</p>
+                        <p class="me-desc">签名：肆虐的青春里，伴我的是一行行代码</p>
+                        <p class="me-desc">邮箱：497236467@qq.com</p>
+                        <div class="me-link">
+                            <div class="me-link-item">
+                                <div class="me-link-border">
+                                    <svg class="icon me-icon" aria-hidden="true">
+                                        <use xlink:href="#icon-weixin"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="me-link-item">
+                                <div class="me-link-border">
+                                    <svg class="icon me-icon" aria-hidden="true">
+                                        <use xlink:href="#icon-QQ"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="me-link-item">
+                                <div class="me-link-border">
+                                    <svg class="icon me-icon" aria-hidden="true">
+                                        <use xlink:href="#icon-message"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="me-link-item">
+                                <div class="me-link-border">
+                                    <svg class="icon me-icon" aria-hidden="true">
+                                        <use xlink:href="#icon-loc"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="me-link-item">
+                                <div class="me-link-border">
+                                    <svg class="icon me-icon" aria-hidden="true">
+                                        <use xlink:href="#icon-heart"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
+                </i-col>
+            </Row>
+            <Row>
+                <i-col class="dynamic" offset="3" span="12">
+                    <Card class="article">
+                        <p slot="title" class="article-title">码农的自我修养1</p>
+                        <div class="article-content">
+                            <div class="article-pic">
+                                <img src="../../static/img/home/judy.jpg" alt="">
+                            </div>
+                            <div class="article-desc">
+                                【摘抄】
+                                辗转一流年，时光穿梭，岁月如水轻轻地蒸发，光景却是另一番。光阴积累回忆，时间循环生机，每一片旖旎的风光，孕育了每一片代表生机的翠绿，绿化了曾暗黄的校园。春天里的阳光轻暖如棉，细雨如针，轻轻落在浅黄的树叶上，深化每一点绿色，迎来四季的中央，妩媚了夏季艳阳天。
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <ul class="article-status clearfix">
+                                <li class="pull_left">
+                                    <Icon class="article-icon" type="ios-clock-outline"></Icon>
+                                    2018-04-04
+                                </li>
+                                <li class="pull_right" @click="onSupport">
+                                    <Icon class="article-icon" type="thumbsup"></Icon>
+                                    61
+                                </li>
+                                <li class="pull_right" @click="onConcern">
+                                    <Icon class="article-icon" type="heart"></Icon>
+                                    10
+                                </li>
+                                <li class="pull_right">
+                                    <Icon class="article-icon" type="android-create"></Icon>
+                                    22
+                                </li>
+                            </ul>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <img src="../../static/img/home/default.jpeg" alt="">
+                                </div>
+                                <div class="comment-content">
+                                    <p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>
+                                    <p class="comment-date">2018-04-04</p>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <img src="../../static/img/home/default.jpeg" alt="">
+                                </div>
+                                <div class="comment-content">
+                                    <p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>
+                                    <p class="comment-date">2018-04-04</p>
+                                </div>
+                            </div>
+                            <div class="article-action">
+                                <i-input type="textarea"  placeholder="Enter something..."></i-input>
+                            </div>
+                        </div>
+                    </Card>
+                    <Card class="article">
+                        <p slot="title" class="article-title">码农的自我修养1</p>
+                        <div class="article-content">
+                            <div class="article-pic">
+                                <img src="../../static/img/home/rabit.jpg" alt="">
+                            </div>
+                            <div class="article-desc">
+                                【摘抄】
+                                辗转一流年，时光穿梭，岁月如水轻轻地蒸发，光景却是另一番。光阴积累回忆，时间循环生机，每一片旖旎的风光，孕育了每一片代表生机的翠绿，绿化了曾暗黄的校园。春天里的阳光轻暖如棉，细雨如针，轻轻落在浅黄的树叶上，深化每一点绿色，迎来四季的中央，妩媚了夏季艳阳天。
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <ul class="article-status clearfix">
+                                <li class="pull_left">
+                                    <Icon class="article-icon" type="ios-clock-outline"></Icon>
+                                    2018-04-04
+                                </li>
+                                <li class="pull_right">
+                                    <Icon class="article-icon" type="thumbsup"></Icon>
+                                    61
+                                </li>
+                                <li class="pull_right">
+                                    <Icon class="article-icon" type="heart"></Icon>
+                                    10
+                                </li>
+                                <li class="pull_right">
+                                    <Icon class="article-icon" type="android-create"></Icon>
+                                    22
+                                </li>
+                            </ul>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <img src="../../static/img/home/default.jpeg" alt="">
+                                </div>
+                                <div class="comment-content">
+                                    <p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>
+                                    <p class="comment-date">2018-04-04</p>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <img src="../../static/img/home/default.jpeg" alt="">
+                                </div>
+                                <div class="comment-content">
+                                    <p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>
+                                    <p class="comment-date">2018-04-04</p>
+                                </div>
+                            </div>
+                            <div class="article-action">
+                                <i-input type="textarea"  placeholder="Enter something..."></i-input>
+                            </div>
+                        </div>
+                    </Card>
+                </i-col>
+                <i-col offset="1" span="6">
+                    <Card class="latest">
+                        <p slot="title">最新动态</p>
+                        <p>01 码农的自我修养</p>
+                        <p>02 码农的自我修养</p>
+                        <p>03 码农的自我修养</p>
+                        <p>04 码农的自我修养</p>
+                    </Card>
 
-                    <Timeline-item color="green">
-                        <p class="time">1984年</p>
-                        <p class="content">发布Macitonsh</p>
-                    </Timeline-item>
-                    <Timeline-item color="orange">
-                        <p class="time">1984年</p>
-                        <p class="content">发布Macitonsh</p>
-                    </Timeline-item>
-                    <Timeline-item color="red">
-                        <p class="time">1984年</p>
-                        <p class="content">发布Macitonsh</p>
-                    </Timeline-item>
-                </Timeline>
-            </Card>
+                    <Card class="latest">
+                        <p slot="title">最新笔记</p>
+                        <p>01 码农的自我修养</p>
+                        <p>02 码农的自我修养</p>
+                        <p>03 码农的自我修养</p>
+                        <p>04 码农的自我修养</p>
+                    </Card>
 
-            <Card>
-                <p slot="title">进度条</p>
-                <i-progress percent="25"></i-progress>
-            </Card>
-
-            <Card>
-                <p slot="title">下拉框</p>
-                <Row>
-                    <i-col span="8">
-                        <i-select v-model="model1">
-                            <i-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
-                        </i-select>
-                    </i-col>
-                    <i-col span="8">
-                        <date-picker type="date" placeholder="Select date"></date-picker>
-                    </i-col>
-                    <i-col span="8">
-                        <date-picker type="daterange"  placement="bottom-end" placeholder="Select date"></date-picker>
-                    </i-col>
-                </Row>
-            </Card>
-
-            <Card>
-                <p slot="title">modal对话框</p>
-                <i-button type="primary" @click="modal1=true">打开对话框</i-button>
-                <modal v-model="modal1" title="这是标题" @on-ok="ok" @on-cancel="cancel">
-                    <p>content of dialog</p>
-                    <p>content of dialog</p>
-                    <p>content of dialog</p>
-                </modal>
-            </Card>
-            
-            <Card>
-                <p slot="title">幻灯片</p>
-                <Carousel autoplay autoplaySpeed="3000" loop>
-                    <carousel-item>
-                        <div class="demo-Carousel">1</div>
-                    </carousel-item>
-                    <carousel-item>
-                        <div class="demo-Carousel">2</div>
-                    </carousel-item>
-                    <carousel-item>
-                        <div class="demo-Carousel">3</div>
-                    </carousel-item>
-                    <carousel-item>
-                        <div class="demo-Carousel">4</div>
-                    </carousel-item>
-                </Carousel>
-            </Card>
-            
-            <Card>
-                <p slot="title">表格</p>
-                <i-table :columns="columns1" :data="data1"></i-table>
-            </Card>
-
-            <Card>
-                <p slot="title">分页</p>
-                <Page total="100" show-sizer></Page>
-            </Card>
+                    <Card class="latest">
+                        <p slot="title">轻松一刻</p>
+                        <p>01 码农的自我修养</p>
+                        <p>02 码农的自我修养</p>
+                        <p>03 码农的自我修养</p>
+                        <p>04 码农的自我修养</p>
+                    </Card>
+                </i-col>
+            </Row>
         </i-content>
         <i-footer>
 

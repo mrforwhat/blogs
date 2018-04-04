@@ -51,6 +51,7 @@ module.exports = function (next, app) {
 
     // 接口
     app.use('/api/example/', require('../controllers/api/example'));
+    app.use('/api/article/', require('../controllers/api/article'));
 
     // 后置中间件
     app.use(log.expressMiddleware());
