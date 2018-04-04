@@ -109,52 +109,42 @@
             </Row>
             <Row>
                 <i-col class="dynamic" offset="3" span="12">
-                    <Card class="article">
-                        <p slot="title" class="article-title">码农的自我修养1</p>
+                    <Card class="article" v-for="item in list">
+                        <p slot="title" class="article-title">{{item.title}}</p>
                         <div class="article-content">
                             <div class="article-pic">
                                 <img src="../../static/img/home/judy.jpg" alt="">
                             </div>
                             <div class="article-desc">
-                                【摘抄】
-                                辗转一流年，时光穿梭，岁月如水轻轻地蒸发，光景却是另一番。光阴积累回忆，时间循环生机，每一片旖旎的风光，孕育了每一片代表生机的翠绿，绿化了曾暗黄的校园。春天里的阳光轻暖如棉，细雨如针，轻轻落在浅黄的树叶上，深化每一点绿色，迎来四季的中央，妩媚了夏季艳阳天。
+                                {{item.content}}
                             </div>
                         </div>
                         <div class="article-footer">
                             <ul class="article-status clearfix">
                                 <li class="pull_left">
                                     <Icon class="article-icon" type="ios-clock-outline"></Icon>
-                                    2018-04-04
+                                    {{item.date}}
                                 </li>
                                 <li class="pull_right" @click="onSupport">
                                     <Icon class="article-icon" type="thumbsup"></Icon>
-                                    61
+                                    {{item.count_support}}
                                 </li>
                                 <li class="pull_right" @click="onConcern">
                                     <Icon class="article-icon" type="heart"></Icon>
-                                    10
+                                    {{item.count_concern}}
                                 </li>
                                 <li class="pull_right">
                                     <Icon class="article-icon" type="android-create"></Icon>
-                                    22
+                                    {{item.count_total}}
                                 </li>
                             </ul>
-                            <div class="comment">
+                            <div class="comment" v-for="comment in item.comment">
                                 <div class="comment-avatar">
                                     <img src="../../static/img/home/default.jpeg" alt="">
                                 </div>
                                 <div class="comment-content">
-                                    <p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>
-                                    <p class="comment-date">2018-04-04</p>
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <div class="comment-avatar">
-                                    <img src="../../static/img/home/default.jpeg" alt="">
-                                </div>
-                                <div class="comment-content">
-                                    <p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>
-                                    <p class="comment-date">2018-04-04</p>
+                                    <p><span class="comment-nickname">{{comment.front}}</span>：{{comment.content}}</p>
+                                    <p class="comment-date">{{comment.date}}</p>
                                 </div>
                             </div>
                             <div class="article-action">
@@ -162,59 +152,59 @@
                             </div>
                         </div>
                     </Card>
-                    <Card class="article">
-                        <p slot="title" class="article-title">码农的自我修养1</p>
-                        <div class="article-content">
-                            <div class="article-pic">
-                                <img src="../../static/img/home/rabit.jpg" alt="">
-                            </div>
-                            <div class="article-desc">
-                                【摘抄】
-                                辗转一流年，时光穿梭，岁月如水轻轻地蒸发，光景却是另一番。光阴积累回忆，时间循环生机，每一片旖旎的风光，孕育了每一片代表生机的翠绿，绿化了曾暗黄的校园。春天里的阳光轻暖如棉，细雨如针，轻轻落在浅黄的树叶上，深化每一点绿色，迎来四季的中央，妩媚了夏季艳阳天。
-                            </div>
-                        </div>
-                        <div class="article-footer">
-                            <ul class="article-status clearfix">
-                                <li class="pull_left">
-                                    <Icon class="article-icon" type="ios-clock-outline"></Icon>
-                                    2018-04-04
-                                </li>
-                                <li class="pull_right">
-                                    <Icon class="article-icon" type="thumbsup"></Icon>
-                                    61
-                                </li>
-                                <li class="pull_right">
-                                    <Icon class="article-icon" type="heart"></Icon>
-                                    10
-                                </li>
-                                <li class="pull_right">
-                                    <Icon class="article-icon" type="android-create"></Icon>
-                                    22
-                                </li>
-                            </ul>
-                            <div class="comment">
-                                <div class="comment-avatar">
-                                    <img src="../../static/img/home/default.jpeg" alt="">
-                                </div>
-                                <div class="comment-content">
-                                    <p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>
-                                    <p class="comment-date">2018-04-04</p>
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <div class="comment-avatar">
-                                    <img src="../../static/img/home/default.jpeg" alt="">
-                                </div>
-                                <div class="comment-content">
-                                    <p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>
-                                    <p class="comment-date">2018-04-04</p>
-                                </div>
-                            </div>
-                            <div class="article-action">
-                                <i-input type="textarea"  placeholder="Enter something..."></i-input>
-                            </div>
-                        </div>
-                    </Card>
+                    <!--<Card class="article">-->
+                        <!--<p slot="title" class="article-title">码农的自我修养1</p>-->
+                        <!--<div class="article-content">-->
+                            <!--<div class="article-pic">-->
+                                <!--<img src="../../static/img/home/rabit.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="article-desc">-->
+                                <!--【摘抄】-->
+                                <!--辗转一流年，时光穿梭，岁月如水轻轻地蒸发，光景却是另一番。光阴积累回忆，时间循环生机，每一片旖旎的风光，孕育了每一片代表生机的翠绿，绿化了曾暗黄的校园。春天里的阳光轻暖如棉，细雨如针，轻轻落在浅黄的树叶上，深化每一点绿色，迎来四季的中央，妩媚了夏季艳阳天。-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="article-footer">-->
+                            <!--<ul class="article-status clearfix">-->
+                                <!--<li class="pull_left">-->
+                                    <!--<Icon class="article-icon" type="ios-clock-outline"></Icon>-->
+                                    <!--2018-04-04-->
+                                <!--</li>-->
+                                <!--<li class="pull_right">-->
+                                    <!--<Icon class="article-icon" type="thumbsup"></Icon>-->
+                                    <!--61-->
+                                <!--</li>-->
+                                <!--<li class="pull_right">-->
+                                    <!--<Icon class="article-icon" type="heart"></Icon>-->
+                                    <!--10-->
+                                <!--</li>-->
+                                <!--<li class="pull_right">-->
+                                    <!--<Icon class="article-icon" type="android-create"></Icon>-->
+                                    <!--22-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            <!--<div class="comment">-->
+                                <!--<div class="comment-avatar">-->
+                                    <!--<img src="../../static/img/home/default.jpeg" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="comment-content">-->
+                                    <!--<p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>-->
+                                    <!--<p class="comment-date">2018-04-04</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="comment">-->
+                                <!--<div class="comment-avatar">-->
+                                    <!--<img src="../../static/img/home/default.jpeg" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="comment-content">-->
+                                    <!--<p><span class="comment-nickname">转角遇到bug</span>：这是一条评论</p>-->
+                                    <!--<p class="comment-date">2018-04-04</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="article-action">-->
+                                <!--<i-input type="textarea"  placeholder="Enter something..."></i-input>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</Card>-->
                 </i-col>
                 <i-col offset="1" span="6">
                     <Card class="latest">

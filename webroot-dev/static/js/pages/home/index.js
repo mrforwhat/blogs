@@ -6,7 +6,10 @@
 var Controller = require('blear.classes.controller');
 var api = require('../../utils/api');
 var ctrl = new Controller();
-
+var data = ctrl.data = {
+    thanks: ['博主谢谢你啦,送你❤', '你是最帅滴', '最美不过妳'],
+    list: []
+};
 ctrl.title('欢迎来到iview');
 
 ctrl.install(function (view) {
@@ -17,9 +20,7 @@ ctrl.install(function (view) {
 ctrl.install(function (view) {
     new Vue({
         el: '#home',
-        data: {
-            thanks: ['博主谢谢你啦,送你❤', '你是最帅滴', '最美不过妳']
-        },
+        data: data,
         methods: {
             onSupport: function () {
                 var randomIndex = Math.ceil(parseInt(Math.random() * 10) / 3);
@@ -38,7 +39,7 @@ ctrl.show(function (view) {
         method: 'get',
         query: {}
     }, function (err, ret) {
-        debugger;
+        data.list = ret.list;
     });
 });
 
