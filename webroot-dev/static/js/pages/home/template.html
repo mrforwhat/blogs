@@ -127,11 +127,11 @@
                                 </li>
                                 <li class="pull_right" @click="onSupport">
                                     <Icon class="article-icon" type="thumbsup"></Icon>
-                                    {{item.count_support}}
+                                    {{item.meta.votes}}
                                 </li>
                                 <li class="pull_right" @click="onConcern">
                                     <Icon class="article-icon" type="heart"></Icon>
-                                    {{item.count_concern}}
+                                    {{item.meta.favs}}
                                 </li>
                                 <li class="pull_right">
                                     <Icon class="article-icon" type="android-create"></Icon>

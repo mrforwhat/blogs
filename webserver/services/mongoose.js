@@ -18,9 +18,9 @@ module.exports = function (next) {
         if (err) {
             err.mongodbURL = configs.mongodb;
         }
-
         next(err);
     });
+
 
     mongoose.connect(configs.mongodb);
     mongoose.connection.on('connected', function () {

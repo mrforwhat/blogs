@@ -33,6 +33,12 @@ module.exports = {
         test: ['log', 'info', 'warn', 'error'],
         pro: ['warn', 'error']
     }[env],
+    mongodb: {
+        local: 'mongodb://localhost:27017/blogdb',
+        dev: 'mongodb://localhost:27017/blogdb',
+        test: 'mongodb://localhost:27017/blogdb',
+        pro: 'mongodb://localhost:27017/blogdb'
+    }[env],
     api: 'http://api.com',
     fundebug: {
         apiUrl: 'https://og6593g2z.qnssl.com/fundebug.0.3.3.min.js',
