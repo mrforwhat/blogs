@@ -13,12 +13,12 @@ var console = require('blear.node.console');
 
 var configs = require('../../configs.js');
 
-module.exports = function (next) {
+module.exports = function (next,app) {
     var complete = fun.once(function (err) {
         if (err) {
             err.mongodbURL = configs.mongodb;
         }
-        next(err);
+        next(err,app);
     });
 
 
