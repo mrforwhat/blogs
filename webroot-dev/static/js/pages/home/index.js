@@ -8,7 +8,11 @@ var api = require('../../utils/api');
 var ctrl = new Controller();
 var data = ctrl.data = {
     thanks: ['博主谢谢你啦,送你❤', '你是最帅滴', '最美不过妳'],
-    list: []
+    articles: {
+        list: [],
+        total: 0
+    }
+
 };
 ctrl.title('欢迎来到iview');
 
@@ -39,12 +43,12 @@ ctrl.show(function (view) {
         method: 'get',
         query: {}
     }, function (err, ret) {
-        data.list = ret.list;
+        data.articles.list = ret.list;
+        data.articles.total = ret.total;
     });
 });
 
 ctrl.hide(function (view) {
 
 });
-
 module.exports = ctrl.export();

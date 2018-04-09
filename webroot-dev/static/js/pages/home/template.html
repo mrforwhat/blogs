@@ -109,7 +109,7 @@
             </Row>
             <Row>
                 <i-col class="dynamic" offset="3" span="12">
-                    <Card class="article" v-for="item in list">
+                    <Card class="article" v-for="item in articles.list">
                         <p slot="title" class="article-title">{{item.title}}</p>
                         <div class="article-content">
                             <div class="article-pic">
@@ -123,7 +123,7 @@
                             <ul class="article-status clearfix">
                                 <li class="pull_left">
                                     <Icon class="article-icon" type="ios-clock-outline"></Icon>
-                                    {{item.date}}
+                                    {{dateTimeFormat(item.date)}}
                                 </li>
                                 <li class="pull_right" @click="onSupport">
                                     <Icon class="article-icon" type="thumbsup"></Icon>
@@ -135,7 +135,7 @@
                                 </li>
                                 <li class="pull_right">
                                     <Icon class="article-icon" type="android-create"></Icon>
-                                    {{item.count_total}}
+                                    {{articles.total}}
                                 </li>
                             </ul>
                             <div class="comment" v-for="comment in item.comment">
@@ -144,7 +144,7 @@
                                 </div>
                                 <div class="comment-content">
                                     <p><span class="comment-nickname">{{comment.front}}</span>：{{comment.content}}</p>
-                                    <p class="comment-date">{{comment.date}}</p>
+                                    <p class="comment-date">{{dateTimeFormat(comment.date)}}</p>
                                 </div>
                             </div>
                             <div class="article-action">

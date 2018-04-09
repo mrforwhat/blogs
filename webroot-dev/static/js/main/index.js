@@ -9,7 +9,7 @@
 
 var Application = require('blear.ui.application');
 var Router = require('blear.classes.router');
-
+require('../utils/vue-tools');
 
 // require('../utils/mvvm-static-methods');
 
