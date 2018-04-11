@@ -85,6 +85,11 @@
     width: 210px;
     height: 120px;
     padding: 10px; }
+  .article-tag {
+    color: #FF9833;
+    font-weight: bold;
+    padding: 0 5px;
+    letter-spacing: 1; }
   .article-desc {
     padding: 10px;
     -webkit-box-flex: 1;
@@ -104,6 +109,8 @@
     border-left: 20px solid #ffffff;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent; }
+  .article-action_btn {
+    margin: 10px 0; }
 
 .comment {
   display: -webkit-box;

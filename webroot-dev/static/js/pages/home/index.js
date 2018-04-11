@@ -5,13 +5,16 @@
 
 var Controller = require('blear.classes.controller');
 var api = require('../../utils/api');
+var model = require('./model');
 var ctrl = new Controller();
-var data = ctrl.data = {
+var data = window.data = ctrl.data = {
     thanks: ['博主谢谢你啦,送你❤', '你是最帅滴', '最美不过妳'],
     articles: {
         list: [],
         total: 0
-    }
+    },
+    tags: ['摘抄', '经典'],
+    mycomment: ''
 
 };
 ctrl.title('欢迎来到iview');
@@ -32,20 +35,26 @@ ctrl.install(function (view) {
             },
             onConcern: function () {
                 this.$Message.success('感谢您的关注,❤')
+            },
+            onWrite: function (item) {
+                item.show = !item.show;
+            },
+            onSubmit: function (item) {
+                var the = this;
+                model.postComment(item, data.mycomment, function (err, ret) {
+                    if (err) {
+                        return the.$Message.error('出错了，╭(╯3╰)╮');
+                    }
+                    the.$Message.success('感谢您的评论！');
+                    model.getArticleList(data);
+                })
             }
         }
     })
 });
 
 ctrl.show(function (view) {
-    api({
-        url: '/api/article/list',
-        method: 'get',
-        query: {}
-    }, function (err, ret) {
-        data.articles.list = ret.list;
-        data.articles.total = ret.total;
-    });
+    model.getArticleList(data);
 });
 
 ctrl.hide(function (view) {

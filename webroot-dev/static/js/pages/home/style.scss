@@ -86,6 +86,12 @@
     height: 120px;
     padding: 10px;
   }
+  &-tag {
+    color: #FF9833;
+    font-weight: bold;
+    padding: 0 5px;
+    letter-spacing: 1;
+  }
   &-desc {
     padding: 10px;
     @include flex-grow(1);
@@ -104,6 +110,11 @@
     border-left: 20px solid #ffffff;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
+  }
+  &-action {
+    &_btn {
+      margin: 10px 0;
+    }
   }
 }
 
